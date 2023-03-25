@@ -1,0 +1,1 @@
+// script for single movie details page

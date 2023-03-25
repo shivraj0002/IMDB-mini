@@ -1,0 +1,1 @@
+// script file for main page of website

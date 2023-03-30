@@ -1,1 +1,201 @@
-/* main page styles i.e index.html */
+/* navbar stylings */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  padding: 5px;
+  width: 70%;
+}
+
+.search-bar > form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.search-bar > form > input[type="text"] {
+  border: none;
+  margin-left: 10px;
+  flex-grow: 1;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-bar > form > input[type="text"]::placeholder {
+  color: #ccc;
+}
+
+.search-bar > form > button[type="submit"] {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.dropdown {
+  display: none;
+}
+
+/* main content stylings starts */
+/* main container stylings */
+#main-container {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  min-height: 91.5vh;
+  /* grid-gap: 20px; */
+}
+
+.movie-container {
+  background-color: #f1f1f1;
+  display: flex;
+
+  /* additional styles for movie container */
+}
+
+.fevorite-movies {
+  background-color: #e5e5e5;
+  /* additional styles for favorite movies container */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 1070px) {
+  #main-container {
+    grid-template-columns: 100%;
+  }
+  .dropdown {
+    display: block;
+  }
+}
+
+/*  movie card stylings */
+.movie-card {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  margin: 5px;
+  align-self: baseline;
+}
+
+.movie-card-header {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.movie-card-poster {
+  display: block;
+  width: 100%;
+  height: 200px;
+}
+
+.movie-card-body {
+  padding: 10px;
+  height: 100px;
+}
+
+.movie-release-date {
+  text-align: center;
+}
+.movie-card-title,
+.movie-release-date {
+  padding: 0;
+  margin: 5 0 0 0;
+}
+
+/* footer of card */
+.card-text {
+  display: flex;
+  margin-top: 0;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 15px;
+}
+
+.fa-star {
+  color: yellow;
+}
+
+#rating {
+  color: black;
+}
+.fav-btn {
+  border: transparent;
+  background-color: transparent;
+  text-align: center;
+}
+
+.fa-heart,
+.fa-calendar-days {
+  color: rgb(156, 156, 156);
+  font-size: medium;
+}
+
+.fa-heart:hover {
+  color: red;
+  cursor: pointer;
+}
+
+/* favorite section styles */
+.fev-movie-card-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 5px 5px 16px 5px;
+
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the poster image */
+.fev-movie-poster > img {
+  width: 135px;
+  height: 140px;
+  /* margin-right: 16px; */
+}
+
+/* Style for the title */
+.fev-movie-title > * {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for the delete icon */
+.fev-movie-delete-icon {
+  height: 100%;
+  min-width: 30px;
+}
+.fev-movie-delete-icon > i {
+  font-size: larger;
+  text-align: center;
+}
+/* Media query to switch to vertical layout on smaller screens */
+@media screen and (max-width: 600px) {
+  .fev-movie-card-container {
+    flex-direction: column;
+    width: fit-content;
+  }
+
+  .fev-movie-poster > img {
+    width: 100%;
+  }
+
+  .fev-movie-title {
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+}

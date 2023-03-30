@@ -1,1 +1,19 @@
 /* mediaquerys for responsive page */
+/* dropdown */
+.menu {
+  display: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu li {
+  margin-bottom: 10px;
+  height: 20px;
+  padding: 8px;
+}
+
+.menu a {
+  color: #333;
+  text-decoration: none;
+}

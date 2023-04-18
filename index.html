@@ -25,68 +25,77 @@
                     IMDB
                 </div>
                 <div class="search-bar">
-                    <form>
+                    <form id="searchForm">
                         <button type="submit">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
-                        <input type="text" placeholder="Search movies..." />
+                        <input type="text" placeholder="Search movies..." id="search-bar" />
                     </form>
                 </div>
                 <div class="dropdown">
                     <i class="fa-solid fa-bars"></i>
                 </div>
-                <ul class="menu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Favorites</a></li>
-                </ul>
             </nav>
+            <ul class="menu d-none">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Favorites</a></li>
+            </ul>
     </header>
     <!-- main content -->
     <main>
         <div id="main-container">
-            <div class="movie-container">
-                <div class="movie-card">
-                    <div class="movie-card-header">
-                        <img src="https://via.placeholder.com/350x200" alt="Movie poster" class="movie-card-poster">
-                    </div>
-                    <div class="movie-card-body">
-                        <p class="movie-release-date">
-                            <i class="fa-solid fa-calendar-days"></i>
-                            27-10-23
-                        </p>
-                        <h4 class="movie-card-title">Movie Title</h4>
+            <div class="movie-container-parent">
+                <h2 class="section-heading">Results</h2>
+                <div class="movie-container" id="results">
+                    <!-- <a href="">
+                        <div class="movie-card">
+                            <div class="movie-card-header">
+                                <img src="https://via.placeholder.com/350x200" alt="Movie poster"
+                                    class="movie-card-poster">
+                            </div>
+                            <div class="movie-card-body">
+                                <p class="movie-release-date">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    27-10-23
+                                </p>
+                                <h4 class="movie-card-title">Movie Title</h4>
 
-                    </div>
-                    <div class="movie-card-footer">
-                        <p class="card-text">
-                            <i class="fa-solid fa-star">
-                                <span id="rating">&nbsp;7.8</span>
-                            </i>
-                            <button class="fav-btn">
-                                <i class="fa-solid fa-heart"></i>
-                            </button>
-                        </p>
-                    </div>
+                            </div>
+                            <div class="movie-card-footer">
+                                <p class="card-text">
+                                    <i class="fa-solid fa-star">
+                                        <span id="rating">&nbsp;7.8</span>
+                                    </i>
+                                    <button class="fav-btn">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
+                    </a> -->
                 </div>
-
             </div>
-
-            <div class="fevorite-movies">
-
-                <div class="fev-movie-card-container">
-                    <div class="fev-movie-poster"><img
-                            src="https://images.unsplash.com/photo-1678365202203-a362fa7c880d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2059&q=80"
-                            alt="Poster Image"></div>
-                    <div class="fev-movie-title">
-                        <h4 class="fev-movie-card-title">Movie Title</h4>
-                        <p class="fev-movie-release-date">
-                            <i class="fa-solid fa-calendar-days"></i>
-                            27-10-23
-                        </p>
+            <!-- Favorite Movies Section -->
+            <div class="fevorite-movies-container">
+                <h2 class="section-heading">Fevorites</h2>
+                <div class="fevorite-movies" id="fevoriteMovies">
+                    <!-- <a href="">
+                    <div class="fev-movie-card-container">
+                        <div class="fev-movie-poster"><img
+                                src="https://images.unsplash.com/photo-1678365202203-a362fa7c880d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2059&q=80"
+                                alt="Poster Image"></div>
+                        <div class="fev-movie-title">
+                            <h4 class="fev-movie-card-title">Movie Title</h4>
+                            <p class="fev-movie-release-date">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                27-10-23
+                            </p>
+                        </div>
+                        <div class="fev-movie-delete-icon">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </div>
                     </div>
-                    <div class="fev-movie-delete-icon">
-                        <i class="fa-solid fa-trash-can"></i>
-                    </div>
+                </a> -->
                 </div>
             </div>
         </div>

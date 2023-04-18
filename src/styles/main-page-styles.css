@@ -53,16 +53,31 @@
   /* grid-gap: 20px; */
 }
 
+.movie-container-parent,
+.fevorite-movies-container {
+  height: 100%;
+  width: 100%;
+}
+
 .movie-container {
   background-color: #f1f1f1;
   display: flex;
+  height: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   /* additional styles for movie container */
 }
 
 .fevorite-movies {
   background-color: #e5e5e5;
+  height: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
   /* additional styles for favorite movies container */
+}
+.section-heading {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 /* Media query for mobile devices */
@@ -198,4 +213,34 @@
     margin-right: 0;
     margin-bottom: 16px;
   }
+}
+
+/* dropdown */
+.menu {
+  position: absolute;
+  top: 60px;
+  right: 2px;
+
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu li {
+  margin-bottom: 10px;
+  height: 20px;
+  padding: 8px;
+}
+
+.menu a {
+  color: #333;
+  text-decoration: none;
+}
+
+.d-flex {
+  display: flex;
+}
+.d-none {
+  display: none;
 }

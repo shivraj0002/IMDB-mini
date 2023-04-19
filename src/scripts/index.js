@@ -45,7 +45,7 @@ searchBar.addEventListener("keyup", function (e) {
 function renderSearchResults(array) {
     searchResults.innerHTML = "";
     array.map((data) => {
-        searchResults.innerHTML = searchResults.innerHTML + `<a href="">
+        searchResults.innerHTML = searchResults.innerHTML + `
         <div class="movie-card">
             <div class="movie-card-header">
                 <img src=${data.Poster} 
@@ -64,12 +64,11 @@ function renderSearchResults(array) {
                 ${data.Title}</h4>
 
             </div>
-            </a>
             <div class="movie-card-footer">
                 <p class="card-text">
-                    <i class="fa-solid fa-star">
-                        <span id="rating">&nbsp;${data.Type}</span>
-                    </i>
+                <button class="readMore-btn" id="read-more" data-id="${data.imdbID} ">
+                    Read More
+                 </button>
                     <button class="fav-btn" id="add-fev"  data-id="${data.imdbID} ">
                         <i class="fa-solid fa-heart" id="add-fevo"  data-id="${data.imdbID}"></i>
                     </button>
@@ -86,21 +85,22 @@ function renderFevoriteList() {
         const currentFevoriteList = JSON.parse(storedFeviriteList);
         fevorites.innerHTML = "";
         currentFevoriteList.map((data) => {
-            fevorites.innerHTML = fevorites.innerHTML + `<a href="">
-            <div class="fev-movie-card-container">
+            fevorites.innerHTML = fevorites.innerHTML + `
+            <div class="fev-movie-card-container ">
                 <div class="fev-movie-poster"><img
                         src="${data.Poster}"
                         alt="Poster Image"></div>
-                        </a>
-                        <a href="">
                 <div class="fev-movie-title">
                     <h4 class="fev-movie-card-title">${data.Title}</h4>
                     <p class="fev-movie-release-date">
                         <i class="fa-solid fa-calendar-days"></i>
                         ${data.Year}
                     </p>
+                    <button class="readMore-btn" id="read-more" data-id="${data.imdbID} ">
+                    Read More
+                 </button>
                 </div>
-                </a>
+
                 <div class="fev-movie-delete-icon" >
                     <i class="fa-solid fa-trash-can" id="del-fev" data-id="${data.imdbID}"></i>
                 </div>
@@ -165,5 +165,12 @@ document.addEventListener("click", function (e) {
         let id = e.target.dataset.id;
         console.log(id);
         favoriteMovieDelete(id)
+    } else if (e.target.id == "read-more") {
+        let id = e.target.dataset.id;
+        console.log(id);
+        localStorage.setItem("movieName", id);
+
+        window.location.href = 'movie-details.html';
+
     }
 });

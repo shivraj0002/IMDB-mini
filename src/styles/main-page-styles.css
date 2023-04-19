@@ -75,6 +75,8 @@
 .fevorite-movies {
   background-color: #e5e5e5;
   height: 100%;
+  max-height: 78vh;
+  overflow: scroll;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px;
   /* additional styles for favorite movies container */
@@ -187,10 +189,10 @@
 }
 
 /* Style for the title */
-.fev-movie-title > * {
-  text-align: center;
-  margin: 0;
-  padding: 0;
+.fev-movie-title > {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Style for the delete icon */
@@ -247,4 +249,10 @@
 }
 .d-none {
   display: none;
+}
+
+.readMore-btn {
+  height: 25px;
+  padding: 2px;
+  color: red;
 }

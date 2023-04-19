@@ -58,7 +58,7 @@
   height: 100%;
   width: 100%;
 }
-
+/* MOVIE CONTAINER  */
 .movie-container {
   background-color: #f1f1f1;
   display: flex;
@@ -71,7 +71,7 @@
 
   /* additional styles for movie container */
 }
-
+/* FEVORITE MOVIE CONTAINER */
 .fevorite-movies {
   background-color: #e5e5e5;
   height: 100%;
@@ -221,7 +221,7 @@
   }
 }
 
-/* dropdown */
+/* dropdown MENU STYLINGS */
 .menu {
   position: absolute;
   top: 60px;

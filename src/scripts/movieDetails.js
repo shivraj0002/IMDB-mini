@@ -1,5 +1,6 @@
 // script for single movie details page
 (function () {
+    // TARGETING THE DOCUMENT ELEMETS TO RENDER DETAILS
     const poster = document.querySelector('#Poster');
     const title = document.querySelector('#Title');
     const year = document.querySelector('#Year');
@@ -17,6 +18,7 @@
 
     GetMovie(id);
 
+    // MOVIE DETAILS FETCHING FROM IMDBid
     async function GetMovie(searchValue) {
         const url = `https://www.omdbapi.com/?i=${searchValue}&?type=sereis&apikey=e10a7d33`;
         try {

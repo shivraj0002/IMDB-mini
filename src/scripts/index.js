@@ -1,16 +1,20 @@
 // script file for main page of website.
+
+// DOCUMENT TARGETING
 const hambergerMenu = document.getElementsByClassName("menu")[0];
 const hambergerIcon = document.getElementsByClassName("dropdown")[0];
+const searchBar = document.querySelector("#search-bar");
+const searchResults = document.getElementById("results");
+const fevorites = document.getElementById("fevoriteMovies");
 
+// HAMPBEREGER MENU HIDE UNHIDE LOGIC
 hambergerIcon.addEventListener("click", () => {
     hambergerMenu.classList.toggle("d-flex");
     hambergerMenu.classList.toggle("d-none");
 })
 
-const searchBar = document.querySelector("#search-bar");
-const searchResults = document.getElementById("results");
-const fevorites = document.getElementById("fevoriteMovies");
 
+// TO GET MOVIE DETAILS FROM OMDB API
 async function getMoviesList(key) {
     let url = `https://www.omdbapi.com/?s=${key}&?type=sereis&apikey=e10a7d33`;
 
@@ -28,16 +32,16 @@ async function getMoviesList(key) {
     }
 }
 
+// PREVENTING DEFAULD BEHAVIOUR ON ENTER CLICK
 searchBar.addEventListener("keydown", (event) => {
     if (event.key == "Enter") {
         event.preventDefault();
     }
 });
-(function () {
-    if (searchBar.value.length > 0) {
-        getMoviesList(searchBar.value)
-    }
-})();
+
+
+
+// READING EVERY KEYUP EVENT ON SEARCH BAR
 searchBar.addEventListener("keyup", function (e) {
     console.log(e.target.value);
     if (e.target.value != "") {
@@ -45,7 +49,7 @@ searchBar.addEventListener("keyup", function (e) {
     }
 })
 
-
+// RENDER THE CONTENTS OF THE SEARCH RESULTS
 function renderSearchResults(array) {
     searchResults.innerHTML = "";
     array.map((data) => {
@@ -87,6 +91,7 @@ function renderSearchResults(array) {
     })
 }
 
+// RENDER THE FEVORITE LIST FROM LOCAL STORAGE
 function renderFevoriteList() {
     const storedFeviriteList = localStorage.getItem('favorites');
     if (storedFeviriteList !== null) {
@@ -122,7 +127,7 @@ function renderFevoriteList() {
 
     }
 }
-
+// ADD TO LOCALSTORAGE 
 function favoriteMovieAdd(movie) {
     const storedFeviriteList = localStorage.getItem('favorites');
     if (storedFeviriteList !== null) {
@@ -136,6 +141,8 @@ function favoriteMovieAdd(movie) {
     }
     renderFevoriteList()
 }
+
+// DELETE LOGIC FOR FEVORITE MOVIES LIST FROM LOCAL STORAGE
 function favoriteMovieDelete(id) {
     const storedFeviriteList = localStorage.getItem('favorites');
     if (storedFeviriteList !== null) {
@@ -146,6 +153,7 @@ function favoriteMovieDelete(id) {
     renderFevoriteList()
 }
 
+// GET MOVIE OBJECT FROM OMDB API BY IMDBid
 async function favoriteMovieGet(searchValue) {
     const storedFeviriteList = localStorage.getItem('favorites');
     if (storedFeviriteList !== null) {
@@ -175,12 +183,9 @@ async function favoriteMovieGet(searchValue) {
     }
 };
 
-(
-    function () {
-        renderFevoriteList();
-    }
-)();
 
+
+//  ADDING EVENT DELIGATION TO SAVE THE CODE
 document.addEventListener("click", function (e) {
     // console.log(e.target);
     if (e.target.id == "add-fev" || e.target.id == "add-fevo") {
@@ -200,3 +205,15 @@ document.addEventListener("click", function (e) {
 
     }
 });
+
+// IFFE's FOR FIRST TIME RENDERING THE LISTS
+(
+    function () {
+        renderFevoriteList();
+    }
+)();
+(function () {
+    if (searchBar.value.length > 0) {
+        getMoviesList(searchBar.value)
+    }
+})();

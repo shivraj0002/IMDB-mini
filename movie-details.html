@@ -23,58 +23,59 @@
         <div class="container">
             <div class="movie-card">
                 <div class="movie-card-header">
-                    <img src="https://images.unsplash.com/photo-1681145552723-02f3c3e5b6a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1856&q=80"
-                        alt="Movie poster" class="movie-card-poster">
+                    <img src="src/assets/not-found.png" alt="Movie poster" class="movie-card-poster" id="Poster">
+
                 </div>
                 <div class="movie-card-body">
                     <p class="movie-release-date">
                         <i class="fa-solid fa-calendar-days"></i>
-                        27-10-23
+                        <span id="Year">---</span>
                     </p>
-                    <h4 class="movie-card-title">Movie Title</h4>
+                    <h4 class="movie-card-title" id="Title">Movie Title</h4>
 
                 </div>
                 <div class="movie-card-footer">
                     <section class="card-text">
                         <p><i class="fa-solid fa-calendar-days"></i><strong>Release Date</strong></p>
-                        <p>---</p>
+                        <p id="Released">---</p>
                     </section>
                     <section class="card-text">
                         <p><i class="fa-solid fa-play"></i><strong>Runtime</strong></p>
-                        <p>---</p>
+                        <p id="Runtime">---</p>
                     </section>
                     <section class="card-text">
                         <p><i class="fa-solid fa-film"></i><strong>Director</strong></p>
-                        <p>---</p>
+                        <p id="Director">---</p>
                     </section>
                     <section class="card-text">
                         <p><i class="fa-solid fa-language"></i><strong>Language</strong></p>
-                        <p>---</p>
+                        <p id="Language">---</p>
                     </section>
                     <section class="card-text">
                         <p><i class="fa-solid fa-flag"></i><strong>Country</strong></p>
-                        <p>---</p>
+                        <p id="Country">---</p>
                     </section>
                     <section class="card-text">
                         <p><i class="fa-solid fa-star"></i><strong>IMDB Rating</strong></p>
-                        <p>---</p>
+                        <p id="imdbRating">---</p>
                     </section>
                     <section class="card-text">
                         <p><i class="fa-solid fa-camera"></i><strong>Type</strong></p>
-                        <p>---</p>
+                        <p id="Type">---</p>
                     </section>
                     <section class="card-text">
                         <p><i class="fa-solid fa-clapperboard"></i><strong>Genre</strong></p>
-                        <p>---</p>
+                        <p id="Genre">---</p>
                     </section>
                     <section class="card-text">
                         <p><i class="fa-solid fa-child-reaching"></i><strong>Actors</strong></p>
-                        <p>---</p>
+                        <p id="Actors">---</p>
                     </section>
                 </div>
             </div>
         </div>
     </main>
+    <script src="src/scripts/movieDetails.js"></script>
 </body>
 
 </html>

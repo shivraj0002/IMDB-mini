@@ -65,7 +65,7 @@
   justify-content: center;
   flex-wrap: wrap;
   height: 100%;
-  max-height: 80vh;
+  max-height: 82vh;
   overflow: scroll;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
@@ -75,7 +75,7 @@
 .fevorite-movies {
   background-color: #e5e5e5;
   height: 100%;
-  max-height: 78vh;
+  max-height: 80vh;
   overflow: scroll;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px;
@@ -226,7 +226,7 @@
   position: absolute;
   top: 60px;
   right: 2px;
-
+  z-index: 999;
   flex-direction: column;
   margin: 0;
   padding: 0;

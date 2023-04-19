@@ -33,7 +33,11 @@ searchBar.addEventListener("keydown", (event) => {
         event.preventDefault();
     }
 });
-
+(function () {
+    if (searchBar.value.length > 0) {
+        getMoviesList(searchBar.value)
+    }
+})();
 searchBar.addEventListener("keyup", function (e) {
     console.log(e.target.value);
     if (e.target.value != "") {
@@ -45,10 +49,14 @@ searchBar.addEventListener("keyup", function (e) {
 function renderSearchResults(array) {
     searchResults.innerHTML = "";
     array.map((data) => {
+        let imgsrc = data.Poster;
+        if (imgsrc === 'N/A') {
+            imgsrc = "./src/assets/not-found.png"
+        }
         searchResults.innerHTML = searchResults.innerHTML + `
         <div class="movie-card">
             <div class="movie-card-header">
-                <img src=${data.Poster} 
+                <img src=${imgsrc} 
                 alt="Movie poster"
                 data-id = "${data.Title}"
                 class="movie-card-poster">
@@ -85,10 +93,14 @@ function renderFevoriteList() {
         const currentFevoriteList = JSON.parse(storedFeviriteList);
         fevorites.innerHTML = "";
         currentFevoriteList.map((data) => {
+            let imgsrc = data.Poster;
+            if (imgsrc === 'N/A') {
+                imgsrc = "./src/assets/not-found.png"
+            }
             fevorites.innerHTML = fevorites.innerHTML + `
             <div class="fev-movie-card-container ">
                 <div class="fev-movie-poster"><img
-                        src="${data.Poster}"
+                        src="${imgsrc}"
                         alt="Poster Image"></div>
                 <div class="fev-movie-title">
                     <h4 class="fev-movie-card-title">${data.Title}</h4>
@@ -135,6 +147,20 @@ function favoriteMovieDelete(id) {
 }
 
 async function favoriteMovieGet(searchValue) {
+    const storedFeviriteList = localStorage.getItem('favorites');
+    if (storedFeviriteList !== null) {
+        const currentFevoriteList = JSON.parse(storedFeviriteList);
+        let isPresentAlready = false;
+        for (const data of currentFevoriteList) {
+            if (data.imdbID == searchValue) {
+                isPresentAlready = true;
+                alert("Movie already present in Fevorites")
+            }
+        }
+        if (isPresentAlready) {
+            return
+        }
+    }
     const url = `https://www.omdbapi.com/?i=${searchValue}&?type=sereis&apikey=e10a7d33`;
     try {
         const response = await fetch(url);

@@ -1,5 +1,15 @@
 /* movie details page styles */
 
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.logo {
+  margin: 0 10px 0 0px;
+}
 .container {
   width: 100vw;
   display: flex;

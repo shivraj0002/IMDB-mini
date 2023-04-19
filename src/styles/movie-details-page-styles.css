@@ -1,1 +1,67 @@
 /* movie details page styles */
+
+.container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: lightgray;
+}
+
+/*  movie card stylings */
+.movie-card {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+  margin: 5px;
+  align-self: baseline;
+}
+.movie-card-title {
+  text-align: center;
+}
+.movie-card-header {
+  position: relative;
+  /* height: 200px; */
+  /* overflow: hidden; */
+}
+
+.movie-card-poster {
+  display: block;
+  width: 100%;
+  height: 350px;
+}
+
+.movie-card-body {
+  padding: 10px;
+  /* height: 100px; */
+}
+
+.movie-release-date {
+  text-align: center;
+}
+.movie-card-title,
+.movie-release-date {
+  padding: 0;
+  margin: 5 0 0 0;
+}
+/* footer of card */
+.card-text {
+  display: flex;
+  margin-top: 0;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 15px;
+}
+
+.card-text p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 100%;
+  max-height: 3.6em;
+}
